@@ -7,6 +7,7 @@
     <groupId>com.levelup</groupId>
     <artifactId>com.levelup.java</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
     <name>Levelup courses homeworks</name>
 
@@ -38,7 +39,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.16.8</version>
+            <version>LATEST</version>
         </dependency>
         <dependency>
             <groupId>com.google.guava</groupId>
