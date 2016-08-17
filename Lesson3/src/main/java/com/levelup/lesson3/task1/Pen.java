@@ -1,38 +1,17 @@
-package com.levelup.lesson3.task1;
+package Task1;
 
 /**
- * Created by Алевтина on 30.07.2016.
+ * Created by Stanislav on 30.07.2016.
  */
-public class Pen {
-    private String color;
-    private String producerName;
-    private int id;
+public class  Pen  {
+    private String makerName;
+    private String colour;
+    private Short thickness;
 
-    public Pen() {
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public String getProducerName() {
-        return producerName;
-    }
-
-    public void setProducerName(String producerName) {
-        this.producerName = producerName;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    Pen (String makerName, String colour, Short thinkness){
+        this.makerName = makerName;
+        this.colour = colour;
+        this.thickness = thinkness;
     }
 
     @Override
@@ -42,24 +21,52 @@ public class Pen {
 
         Pen pen = (Pen) o;
 
-        if (id != pen.id) return false;
-        return producerName.equals(pen.producerName);
+        if (makerName != null ? !makerName.equals(pen.makerName) : pen.makerName != null) return false;
+        if (colour != null ? !colour.equals(pen.colour) : pen.colour != null) return false;
+        return thickness != null ? thickness.equals(pen.thickness) : pen.thickness == null;
 
     }
 
     @Override
     public int hashCode() {
-        int result = producerName.hashCode();
-        result = 31 * result + id;
+        int result = makerName != null ? makerName.hashCode() : 0;
+        result = 31 * result + (colour != null ? colour.hashCode() : 0);
+        result = 31 * result + (thickness != null ? thickness.hashCode() : 0);
         return result;
     }
 
     @Override
     public String toString() {
         return "Pen{" +
-                "color='" + color + '\'' +
-                ", producerName='" + producerName + '\'' +
-                ", id=" + id +
+                "makerName='" + makerName + '\'' +
+                ", colour='" + colour + '\'' +
+                ", thickness=" + thickness +
                 '}';
     }
+
+    public void setMakerName(String makerName) {
+        this.makerName = makerName;
+    }
+
+    public void setColour(String colour) {
+        this.colour = colour;
+    }
+
+    public void setThickness(Short thickness) {
+        this.thickness = thickness;
+    }
+
+    public String getMakerName() {
+        return makerName;
+    }
+
+    public String getColour() {
+        return colour;
+    }
+
+    public Short getThickness() {
+        return thickness;
+    }
+
+
 }
